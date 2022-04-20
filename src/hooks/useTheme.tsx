@@ -1,7 +1,7 @@
 import { createContext, useContext, useState } from "react";
 import { ThemeProvider as ThemeProviderSC } from 'styled-components'
 
-type ThemeType = {
+export type ThemeType = {
   primary: string,
   primaryShaded: string,
   secondary: string,
@@ -13,8 +13,8 @@ const themes:ThemeType[] = [
     primary: '#303030',
     primaryShaded: '#404040',
     secondary: '#fafafa',
-    background: '#eff0ba',
-    background2:'#eeeef1',
+    background:'#f8ffd9',
+    background2: '#f4f74e',
   },
   {
     primary: '#fafafa',
@@ -27,15 +27,15 @@ const themes:ThemeType[] = [
 
 type IThemeProvider = {
   theme:ThemeType
-  useTheme():void
+  switchTheme():void
 }
 
 export const ThemeContext = createContext<IThemeProvider>({
   theme:themes[0],
-  useTheme:()=>{},
+  switchTheme:()=>{},
 })
 
-export function useTheme():IThemeProvider{
+export default function useTheme():IThemeProvider{
   return useContext(ThemeContext)
 }
 
@@ -53,7 +53,7 @@ export function ThemeProvider({children}:ThemeProviderProps){
   return (
     <ThemeContext.Provider value={{
       theme,
-      useTheme,
+      switchTheme,
     }}>
       <ThemeProviderSC theme={theme}>
         {children}

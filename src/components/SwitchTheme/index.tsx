@@ -1,11 +1,14 @@
 import { useState } from 'react';
+import useTheme from '../../hooks/useTheme';
 import * as S from './styles'
 
 function Switch(){
   const [state,setState] = useState(false);
+  const {switchTheme} = useTheme();
 
   const checkHandler = () => {
     setState(!state)
+    switchTheme();
   }
 
   return(

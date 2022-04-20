@@ -14,7 +14,7 @@ export const Title = styled.h2`
   text-align:center;
   margin-top:10vh;
   margin-bottom:24px;
-  color:#fff;
+  color:${props => props.theme.primary};
 `
 
 export const LinksContainer = styled.nav`
