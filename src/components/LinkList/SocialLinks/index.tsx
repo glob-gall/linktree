@@ -6,6 +6,7 @@ export type SocialLink = {
 }
 export type RenderLinkProps  = SocialLink & {
   platform: 'facebook' | 'instagram' | 'website' | 'github'
+  afterDomain:string
   link:string
 }
 

@@ -7,6 +7,8 @@ export const Container = styled.nav`
   margin: 0 auto;
   margin-bottom:40px;
   width:100%;
+
+  margin-bottom:40px;
 `
 
 export const Title = styled.h2`
@@ -23,5 +25,9 @@ export const LinksContainer = styled.nav`
   align-items:center;
   flex-direction:column;
   width:100%;
-  margin-bottom:40px;
+  margin-bottom:12px;
+`
+
+export const Url = styled.a`
+  color:${({theme})=> theme.primary}
 `
