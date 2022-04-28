@@ -42,7 +42,7 @@ function LinkList({title,hasEdition} : LinkListProps){
 
   function loadUrl(){
     const query = links.reduce((prev,{link,platform,afterDomain}) => prev+`&${platform}=${afterDomain}`,'')
-    const fullUrl = `http://localhost:3000?${query}`;
+    const fullUrl = `${process.env.NEXT_PUBLIC_BASE_URL}?${query}`;
     return fullUrl
   }
 
